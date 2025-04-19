@@ -1,0 +1,14 @@
+Explain the concept of bit manipulation and its advantages in algorithm design.
+Bit manipulation means using binary operations directly on numbers.
+Operations like AND (&), OR (|), XOR (^), NOT (~), LEFT SHIFT (<<), and RIGHT SHIFT (>>) help solve problems faster.
+
+Advantages:
+Very fast (bitwise operations are O(1))
+Used in checking even/odd, power of 2, swapping, and more
+Reduces memory usage
+
+Example:
+To check even/odd: (n & 1) → 0 means even, 1 means odd
+
+Time Complexity: O(1) per operation
+Space Complexity: O(1)
