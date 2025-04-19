@@ -1,0 +1,29 @@
+How to find the maximum product subarray.
+
+Algorithm:
+Keep track of current max and current min.
+Update them on each step because negative * negative = positive.
+
+Code:
+public class MaxProductSubarray {
+    public static void main(String[] args) {
+        int[] nums = {2, 3, -2, 4};
+        int maxProd = nums[0], minProd = nums[0], result = nums[0];
+
+        for (int i = 1; i < nums.length; i++) {
+            int temp = maxProd;
+            maxProd = Math.max(nums[i], Math.max(maxProd * nums[i], minProd * nums[i]));
+            minProd = Math.min(nums[i], Math.min(temp * nums[i], minProd * nums[i]));
+            result = Math.max(result, maxProd);
+        }
+
+        System.out.println("Max product: " + result);
+    }
+}
+
+Example:
+Input: [2, 3, -2, 4] → Output: 6
+
+Time Complexity: O(n)
+Space Complexity: O(1)
+
