@@ -1,0 +1,36 @@
+Generate all permutations of a given string.
+
+Algorithm:
+Use recursion and backtracking.
+Swap characters and generate all options.
+
+Code:
+public class StringPermutations {
+    static void permute(String str, int l, int r) {
+        if (l == r) System.out.println(str);
+        else {
+            for (int i = l; i <= r; i++) {
+                str = swap(str, l, i);
+                permute(str, l + 1, r);
+                str = swap(str, l, i); // backtrack
+            }
+        }
+    }
+
+    static String swap(String s, int i, int j) {
+        char[] ch = s.toCharArray();
+        char temp = ch[i]; ch[i] = ch[j]; ch[j] = temp;
+        return String.valueOf(ch);
+    }
+
+    public static void main(String[] args) {
+        String str = "abc";
+        permute(str, 0, str.length() - 1);
+    }
+}
+
+Example:
+Input: "abc" → Output: abc, acb, bac, bca, cab, cba
+
+Time Complexity: O(n!)
+Space Complexity: O(n)
