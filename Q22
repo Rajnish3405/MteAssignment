@@ -1,0 +1,22 @@
+How to check if a number is a power of two using bit manipulation.
+Algorithm:
+A number is power of 2 if it has only one bit as 1 (like 2, 4, 8, 16).
+So, n & (n - 1) will be 0 only for powers of two.
+
+Code:
+
+public class PowerOfTwo {
+    public static void main(String[] args) {
+        int n = 16;
+        boolean isPowerOfTwo = (n > 0) && ((n & (n - 1)) == 0);
+        System.out.println("Is Power of Two: " + isPowerOfTwo);
+    }
+}
+
+Example:
+Input: 16 → Output: true
+Input: 18 → Output: false
+
+Time Complexity: O(1)
+Space Complexity: O(1)
+
