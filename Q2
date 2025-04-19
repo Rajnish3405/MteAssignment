@@ -1,0 +1,27 @@
+Write a program to find the sum of elements in a given range [L, R] using a prefix sum array.
+
+Algorithm:
+Build prefix array.
+Use formula: prefix[R] - prefix[L-1]
+Code:-
+public class PrefixSumRange {
+    public static void main(String[] args) {
+        int[] arr = {2, 4, 6, 8, 10};
+        int[] prefix = new int[arr.length];
+        prefix[0] = arr[0];
+        for (int i = 1; i < arr.length; i++) {
+            prefix[i] = prefix[i - 1] + arr[i];
+        }
+
+        int L = 1, R = 3;
+        int rangeSum = prefix[R] - (L > 0 ? prefix[L - 1] : 0);
+        System.out.println("Sum from " + L + " to " + R + " is: " + rangeSum);
+    }
+}
+
+Example:
+Input: [2, 4, 6, 8, 10], L = 1, R = 3
+Output: 18
+
+Time Complexity: O(n)
+Space Complexity: O(n)
