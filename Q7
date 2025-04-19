@@ -1,0 +1,13 @@
+Explain the sliding window technique and its use in string problems.
+Sol:-
+Sliding window means using a window (like a frame) over the array or string, and moving it to solve problems in efficient time.
+Uses in Strings:
+Longest substring with conditions
+Count characters in window
+Pattern matching
+
+Example:
+In "abcabcbb", to find longest substring without repeat → use a sliding window.
+
+Time Complexity: Usually O(n)
+Space Complexity: Depends on problem (can be O(1) to O(n))
