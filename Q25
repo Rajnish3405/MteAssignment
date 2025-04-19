@@ -1,0 +1,36 @@
+Solve the problem of finding the next greater element for each element in an array.
+Algorithm:
+
+Use stack from right to left.
+If stack is empty, next greater is -1.
+If stack top > current, it’s the answer.
+Else pop till you find one.
+
+Code:
+import java.util.*;
+
+public class NextGreaterElement {
+    public static void main(String[] args) {
+        int[] arr = {4, 5, 2, 10, 8};
+        Stack<Integer> stack = new Stack<>();
+        int[] result = new int[arr.length];
+
+        for (int i = arr.length - 1; i >= 0; i--) {
+            while (!stack.isEmpty() && stack.peek() <= arr[i]) {
+                stack.pop();
+            }
+            result[i] = stack.isEmpty() ? -1 : stack.peek();
+            stack.push(arr[i]);
+        }
+
+        System.out.println("Next greater elements:");
+        for (int val : result) System.out.print(val + " ");
+    }
+}
+
+Example:
+Input: [4, 5, 2, 10, 8] → Output: [5, 10, 10, -1, -1]
+
+Time Complexity: O(n)
+Space Complexity: O(n)
+
