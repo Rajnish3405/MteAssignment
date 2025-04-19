@@ -1,0 +1,15 @@
+1. Explain the concept of a prefix sum array and its applications.
+Sol-
+A prefix sum array is a new array where each index stores the sum of all previous elements (including itself) from the original array. This helps in quickly finding the sum of elements between two given indices.
+
+Applications:
+Range sum queries
+Subarray problems
+Reducing time from O(n) to O(1) for sum queries
+
+Example:
+Original array: [2, 4, 6, 8]
+Prefix array: [2, 6, 12, 20]
+
+Time Complexity: O(n)
+Space Complexity: O(n)
