@@ -1,0 +1,28 @@
+Find the majority element in an array that appears more than n/2 times.
+
+Algorithm:
+Use Boyer-Moore Voting Algorithm.
+Keep a count and candidate.
+Increase or decrease count depending on match.
+
+Code:
+public class MajorityElement {
+    public static void main(String[] args) {
+        int[] nums = {2, 2, 1, 1, 2, 2, 2};
+        int count = 0, candidate = 0;
+
+        for (int num : nums) {
+            if (count == 0) candidate = num;
+            count += (num == candidate) ? 1 : -1;
+        }
+
+        System.out.println("Majority Element: " + candidate);
+    }
+}
+
+Example:
+[2, 2, 1, 1, 2, 2, 2] → Output: 2
+
+Time Complexity: O(n)
+Space Complexity: O(1)
+
