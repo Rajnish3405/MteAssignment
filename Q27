@@ -1,0 +1,27 @@
+Find the node where two singly linked lists intersect.
+
+Algorithm:
+Get lengths of both lists.
+Move the longer list ahead by the difference in lengths.
+Then move both together and check where they meet.
+
+Code:-
+public class IntersectionNode {
+    public static ListNode getIntersection(ListNode headA, ListNode headB) {
+        ListNode a = headA, b = headB;
+
+        while (a != b) {
+            a = (a == null) ? headB : a.next;
+            b = (b == null) ? headA : b.next;
+        }
+
+        return a; // or b
+    }
+}
+
+Example:
+Lists: A = [1, 2, 8, 9], B = [4, 5, 8, 9] → Intersection at 8
+
+Time Complexity: O(n + m)
+Space Complexity: O(1)
+
