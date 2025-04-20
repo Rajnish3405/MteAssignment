@@ -1,0 +1,19 @@
+Explain the concept of linked lists and their applications in algorithm design.
+
+Linked List:
+It is a linear data structure where each element (called node) points to the next. It is not stored in a continuous block like arrays.
+
+Types:
+Singly linked list
+Doubly linked list
+Circular linked list
+
+Applications:
+Efficient insertions/deletions
+Used in queues, stacks, graphs, memory management
+
+Example:
+List: 1 → 2 → 3 → null
+
+Time Complexity (for insertion/deletion): O(1) (if node is known)
+Space Complexity: O(n)
