@@ -1,0 +1,14 @@
+Explain the concept of dynamic programming and its use in solving the maximum subarray problem.
+Dynamic Programming (DP):
+It solves problems by breaking them into smaller subproblems and storing results (memoization) to avoid repeating calculations.
+
+In Maximum Subarray:
+Kadane’s algorithm is a DP-based approach. It stores the best answer ending at each index and builds the solution as it goes.
+
+Example:
+Input: [-2,1,-3,4,-1,2,1,-5,4]
+We store max subarray ending at each index using DP logic.
+
+Time Complexity: O(n)
+Space Complexity: O(1)
+
