@@ -1,0 +1,33 @@
+Generate all subsets of a given array.
+
+Algorithm:
+Use backtracking or bitmasking to generate all subsets.
+Include or exclude each element.
+
+Code:
+import java.util.*;
+
+public class Subsets {
+    static void generateSubsets(int[] nums, int index, List<Integer> current, List<List<Integer>> result) {
+        result.add(new ArrayList<>(current));
+        for (int i = index; i < nums.length; i++) {
+            current.add(nums[i]);
+            generateSubsets(nums, i + 1, current, result);
+            current.remove(current.size() - 1); // backtrack
+        }
+    }
+
+    public static void main(String[] args) {
+        int[] nums = {1, 2, 3};
+        List<List<Integer>> result = new ArrayList<>();
+        generateSubsets(nums, 0, new ArrayList<>(), result);
+        System.out.println(result);
+    }
+}
+
+Example:
+Input: [1, 2] → Output: [[], [1], [2], [1, 2]]
+
+Time Complexity: O(2^n)
+Space Complexity: O(2^n)
+
