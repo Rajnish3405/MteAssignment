@@ -1,0 +1,37 @@
+Generate all permutations of a given array.
+
+Algorithm:
+Use recursion and swapping like string permutations.
+Backtrack after each recursive call.
+
+Code:
+public class ArrayPermutations {
+    static void permute(int[] arr, int l, int r) {
+        if (l == r) {
+            for (int num : arr) System.out.print(num + " ");
+            System.out.println();
+            return;
+        }
+
+        for (int i = l; i <= r; i++) {
+            swap(arr, l, i);
+            permute(arr, l + 1, r);
+            swap(arr, l, i); // backtrack
+        }
+    }
+
+    static void swap(int[] arr, int i, int j) {
+        int temp = arr[i]; arr[i] = arr[j]; arr[j] = temp;
+    }
+
+    public static void main(String[] args) {
+        int[] arr = {1, 2, 3};
+        permute(arr, 0, arr.length - 1);
+    }
+}
+
+Example:
+Input: [1, 2, 3] → Output: all 6 permutations
+
+Time Complexity: O(n!)
+Space Complexity: O(n)
