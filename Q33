@@ -1,0 +1,16 @@
+Explain the sliding window technique and its applications in array problems.
+
+Sliding Window:
+It is a method of moving a window (subarray) over a larger array to solve problems like subarray sums, max/min elements, etc., in linear time.
+
+Applications:
+Maximum sum of subarray
+Longest substring without repeats
+Min/Max in subarray
+
+Example:
+Find max sum of subarray of size 3 in [1, 4, 2, 10, 2, 3] → sliding window helps track the sum without recalculating every time.
+
+Time Complexity: Usually O(n)
+Space Complexity: Depends on problem (O(1) to O(n))
+
