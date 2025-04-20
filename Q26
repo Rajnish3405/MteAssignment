@@ -1,0 +1,38 @@
+Remove the n-th node from the end of a singly linked list.
+
+Algorithm:
+Use two pointers.
+Move first pointer n steps ahead.
+Move both till first reaches end.
+Remove the node.
+
+Code:
+class ListNode {
+    int val;
+    ListNode next;
+    ListNode(int x) { val = x; }
+}
+
+public class RemoveNthNode {
+    public static ListNode removeNth(ListNode head, int n) {
+        ListNode dummy = new ListNode(0);
+        dummy.next = head;
+        ListNode fast = dummy, slow = dummy;
+
+        for (int i = 0; i < n; i++) fast = fast.next;
+        while (fast.next != null) {
+            fast = fast.next;
+            slow = slow.next;
+        }
+
+        slow.next = slow.next.next;
+        return dummy.next;
+    }
+}
+
+Example:
+Input: [1, 2, 3, 4, 5], n = 2 → Output: [1, 2, 3, 5]
+
+Time Complexity: O(n)
+Space Complexity: O(1)
+
